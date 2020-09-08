@@ -16,4 +16,4 @@ jobs:
         # githubOrg: override-org # optional
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }} 
-        working-directory: nginx
+        directory: nginx
