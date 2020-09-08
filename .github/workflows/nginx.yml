@@ -1,0 +1,19 @@
+name: Docker Image CI
+
+on: push
+
+jobs:
+  build_push:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1.0
+      name: Check out code
+    - name: Build and push Docker image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        image: cdrews/nginx
+        registry: docker.pkg.github.com
+        # githubOrg: override-org # optional
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }} 
+      working-directory: nginx
