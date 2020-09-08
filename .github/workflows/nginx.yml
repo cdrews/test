@@ -12,6 +12,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
         image: cdrews/nginx
+        dockerfile: nginx/Dockerfile
         registry: docker.pkg.github.com
         # githubOrg: override-org # optional
         username: ${{ github.actor }}
